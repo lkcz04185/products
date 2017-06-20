@@ -1,7 +1,6 @@
 class ReceiptsController < ApplicationController
 
   def index
-    @receipts = Receipt.all
+    @recepits = Receipt.all
   end
-
 end

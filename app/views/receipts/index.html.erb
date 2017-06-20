@@ -1,3 +1,7 @@
-<%= @receipts.each do |receipt| %>
-<%= receipt.id %> <%=receipt.created_at%>
-<% end %>
+<h2> Přehled Dokladů </h2>
+
+  <% @receipts.each do |receipt| %>
+    <p>
+      <%= receipt.id %>
+    </p>
+  <% end %>
