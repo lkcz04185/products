@@ -7,11 +7,11 @@
     </div>
     <div class="form-inputs">
       <%= f.simple_fields_for :items do |builder| %>
-      <%= builder.collection_select(:variant_id, Variant.all, :id, :name, prompt: true) %>
+      <%= builder.collection_select(:variant_id, Variant.all, :id, :name,  {prompt: 'Volba varianty'}) %>
       <% end %>
     </div>
     <div class="form-actions">
-      <%= f.submit class:"btn btn-primary" %>
+      <%= f.button :submit, 'Uložit doklad', class:"btn btn-primary" %>
     </div>
   <% end %>
 </div>
