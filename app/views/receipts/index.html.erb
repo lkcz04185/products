@@ -2,9 +2,9 @@
   <% if @receipts %>
     <% @receipts.each do |receipt| %>
       <p>
-      <%= link_to 'Doklad č: 'receipt.id, receipt_path(receipt) %>
+      <%= link_to 'Doklad č: ', receipt.id, receipt_path(receipt) %>
       </p>
     <% end %>
   <% end %>
 
-  <%= link_to 'Nový doklad', new_product_path, class: 'btn btn-primary' %>
+  <%= link_to 'Nový doklad', new_receipt_path, class: 'btn btn-primary' %>

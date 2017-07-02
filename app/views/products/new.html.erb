@@ -1,36 +1,31 @@
 <div class="container">
   <h2> Vložte nový produkt </h2>
-  <%= form_for @product do |f| %>
-"
+  <%= simple_form_for @product do |f| %>
+
     <div class="name">
-      <%= f.label :name, 'Název Produktu' %>
-      <%= f.text_field :name%>
+      <%= f.input :name, label:'Název Produktu' %>     
     </div>
 
     <br/>
 
     <div class="description">
-      <%= f.label :description, 'Popis' %>
-      <%= f.text_field :description %>
+      <%= f.input :description, label: 'Popis' %>
     </div>
 
     <br/>
 
-    <%= f.fields_for :variants do |builder| %>
-      <%= builder.label :name, 'Varianta produktu:'%>
-      </br>
-      <%= builder.text_field :name %>
-      </br>
+    <%= f.simple_fields_for :variants do |builder| %>
+      <%= builder.input :name, label: 'Varianta produktu:'%>
     <% end %>
 
     <br/>
 
-    <button type"button" id="add-variant class="pull-right">Přidat variantu</button>
+    <button type"button" id="add-variant" class="pull-right btn btn-primary">Přidat variantu</button>
 
     <br/><br/>
 
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.submit class:"btn btn-primary"%>
     </div>
 
 <% end %>

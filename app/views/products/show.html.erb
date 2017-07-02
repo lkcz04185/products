@@ -1,6 +1,10 @@
+
+<div class="container">
 <%= @product.name %>
 <% @variants.each do |variant| %>
   <p>
   <%= variant.name %>
   </p>
 <% end %>
+<%= link_to 'Smazat produkt', product_path(@product), method: :delete, data: {confirm: "Nevratně smazat produkt?"}, class:"btn btn-danger" %>
+</div>

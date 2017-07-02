@@ -1,11 +1,17 @@
 <div class="container">
   <h2> Nový doklad: </h2>
+
   <%= simple_form_for @receipt do |f| %>
     <div class="form-inputs">
       <%= f.input :name, label: 'Číslo dokladu', required: :true %>
     </div>
+    <div class="form-inputs">
+      <%= f.simple_fields_for :items do |builder| %>
+      <%= builder.collection_select(:variant_id, Variant.all, :id, :name, prompt: true) %>
+      <% end %>
+    </div>
     <div class="form-actions">
-      <%= f.button :submit %>
-      </div>
-<% end %>
+      <%= f.submit class:"btn btn-primary" %>
+    </div>
+  <% end %>
 </div>

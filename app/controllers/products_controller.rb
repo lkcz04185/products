@@ -18,10 +18,17 @@ class ProductsController < ApplicationController
     end
   end
 
-    def show
-      @product = Product.find(params[:id])
-      @variants = @product.variants.all
-    end
+  def show
+    @product = Product.find(params[:id])
+    @variants = @product.variants.all
+  end
+
+  def destroy
+     @product = Product.find(params[:id])
+     @product.destroy
+     redirect_to products_path
+  end
+
 
   private
 
