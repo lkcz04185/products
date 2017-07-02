@@ -1,12 +1,37 @@
 <div class="container">
   <h2> Vložte nový produkt </h2>
-  <%= simple_form_for @product do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name, label: 'Název Produktu', required: :true %>
-      <%= f.input :description, as: :text, required: :true %>
+  <%= form_for @product do |f| %>
+"
+    <div class="name">
+      <%= f.label :name, 'Název Produktu' %>
+      <%= f.text_field :name%>
     </div>
+
+    <br/>
+
+    <div class="description">
+      <%= f.label :description, 'Popis' %>
+      <%= f.text_field :description %>
+    </div>
+
+    <br/>
+
+    <%= f.fields_for :variants do |builder| %>
+      <%= builder.label :name, 'Varianta produktu:'%>
+      </br>
+      <%= builder.text_field :name %>
+      </br>
+    <% end %>
+
+    <br/>
+
+    <button type"button" id="add-variant class="pull-right">Přidat variantu</button>
+
+    <br/><br/>
+
     <div class="form-actions">
       <%= f.button :submit %>
-      </div>
+    </div>
+
 <% end %>
 </div>

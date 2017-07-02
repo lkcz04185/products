@@ -1,1 +1,6 @@
-<%= @product %>
+<%= @product.name %>
+<% @variants.each do |variant| %>
+  <p>
+  <%= variant.name %>
+  </p>
+<% end %>

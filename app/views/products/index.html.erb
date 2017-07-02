@@ -1,13 +1,14 @@
 
 <h2> Přehled Produktů </h2>
-
-  <% @products.each do |product| %>
-    <p class="product-name">
-      <%= product.name %>
-    </p>
-    <p>
-      <%= product.description %>
-    </p>
+  <% if @products %>
+    <% @products.each do |product| %>
+      <p class="product-name">
+        <%= link_to product.name, product_path(product) %>
+      </p>
+      <p>
+       <%= product.description %>
+      </p>
+    <% end %>
   <% end %>
 
   <%= link_to 'Nový produkt', new_product_path, class: 'btn btn-primary' %>
