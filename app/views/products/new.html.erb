@@ -15,7 +15,11 @@
     <br/>
 
     <%= f.simple_fields_for :variants do |builder| %>
+
       <%= builder.input :name, label: 'Varianta produktu:'%>
+      <%= builder.check_box :_destroy %>
+      <%= builder.label :_destroy, "Odstranit"%>
+
     <% end %>
 
     <br/>
