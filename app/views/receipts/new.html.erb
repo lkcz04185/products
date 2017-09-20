@@ -7,8 +7,7 @@
     </div>
     <div class="form-inputs">
       <%= f.simple_fields_for :items do |builder| %>
-      <!-- builder.collection_select(:variant_id, Variant.all, :id, :name, {prompt: 'Choose a Variant'}) -->
-       <%= builder.input :name, label: 'Item:'%>
+      <%= builder.collection_select :variant_id, Variant.all, :id, :name, {prompt: 'Choose a Variant'} %>
       <% end %>
     </div>
     <br />

@@ -22,7 +22,7 @@ class ReceiptsController < ApplicationController
   private
 
   def receipt_params
-    params.require(:receipt).permit(:name, items_attributes: [:id, :name])
+    params.require(:receipt).permit(:name, items_attributes: [:id, :name, :variant_id])
   end
 
 end
