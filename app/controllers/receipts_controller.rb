@@ -1,4 +1,4 @@
-class ReceiptsController < ApplicationController
+ class ReceiptsController < ApplicationController
 
   def index
     @receipts = Receipt.all
@@ -22,7 +22,7 @@ class ReceiptsController < ApplicationController
   private
 
   def receipt_params
-    params.require(:receipt).permit(:name, items_attributes: [:id, :name, :variant_id])
+    params.require(:receipt).permit(:name, items_attributes: [:id, :variant_id])
   end
 
 end
